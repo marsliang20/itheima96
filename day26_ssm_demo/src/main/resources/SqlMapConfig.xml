@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--配置类型别名-->
+    <typeAliases>
+        <!--把指定包里所有的类自动注册别名，类名即别名。别名不区分大小写-->
+        <package name="com.itheima.pojo"/>
+    </typeAliases>
+    
+    <!--数据库环境配置-->
+    <environments default="ssm96">
+        <environment id="ssm96">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///ssm96?characterEncoding=utf-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="0230"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--映射器-->
+    <mappers>
+        <!--把指定包里所有接口自动注册映射器-->
+        <package name="com.itheima.dao"/>
+    </mappers>
+    
+</configuration>
